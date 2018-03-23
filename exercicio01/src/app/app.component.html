@@ -1,0 +1,18 @@
+<h1>Cadastro de pré-candidatos à Presidência da República</h1>
+
+<fieldset>
+  <legend>Novo candidato</legend>
+  <label for="nome">Nome: <input [(ngModel)]="newCandidato.nome" #nome autofocus type="text" id="nome"></label>
+  <label for="partido">Partido: <input [(ngModel)]="newCandidato.partido" type="text" id="partido"></label>
+  <label for="profissao">Profissão: <input [(ngModel)]="newCandidato.profissao" type="text" id="profissao"></label>
+  <input (click)="saveCandidato()" type="button" value="Salvar">
+</fieldset>
+
+<h2 *ngIf="candidatos.length > 0 ">Candidatos:</h2>
+
+<div *ngFor="let candidato of candidatos" >
+  <button class = "link" (click) = "removeCandidato(candidato)">X</button>
+  <p class = "nomeCandidato">{{ candidato.nome }}</p>
+  <p>{{ candidato.partido | uppercase | partidoFilter : true}} </p>
+  <p>{{ candidato.profissao }}</p>
+</div>
