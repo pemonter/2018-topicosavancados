@@ -1,0 +1,30 @@
+div {
+    border: 1px solid black;
+    padding-left: 30px;
+    display: block
+}
+
+textarea {
+    resize: none;
+    position: relative;
+    height: 150px; 
+    width: 95%;
+}
+
+h1 {
+    text-align: center
+}
+
+label {
+    display:block;
+    margin: 5px;
+}
+
+fieldset{
+    border: none
+}
+
+legend{
+    font-weight: bold;
+    text-decoration: underline
+}

@@ -1,0 +1,26 @@
+<h1>Cadastro de Cartas</h1>
+
+<fieldset>
+  <legend>Nova Carta:</legend>
+  <label for="nomeRemetente">Nome Remetente: <input [(ngModel)]="newCarta.nomeRemetente" #nome autofocus type="text" id="nomeRemetente"></label>
+  <label for="endRemetente">Endereço Remetente: <input [(ngModel)]="newCarta.endRemetente" type="text" id="endRemetente"></label>
+  <label for="cepRemetente">CEP Remetente: <input [(ngModel)]="newCarta.cepRemetente" type="text" id="cepRemetente"></label>
+  <label for="nomeDestinatario">Nome Destinatário: <input [(ngModel)]="newCarta.nomeDestinatario" type="text" id="nomeDestinatario"></label>
+  <label for="endDestinatario">Endereço Destinatário: <input [(ngModel)]="newCarta.endDestinatario" type="text" id="endDestinatario"></label>
+  <label for="cepDestinatario">CEP Destinatário: <input [(ngModel)]="newCarta.cepDestinatario" type="text" id="cepDestinatario"></label>
+  <label for="conteudo">Conteúdo: <input [(ngModel)]="newCarta.conteudo" type="text" id="conteudo"></label>
+  <input (click)="saveCarta()" type="button" value="Salvar">
+</fieldset>
+
+<h2 *ngIf="cartas.length > 0 ">Cartas:</h2>
+
+<div *ngFor="let carta of cartas" >
+  <p>Nome Remetente: {{ carta.nomeRemetente }} </p>
+  <p>Endereço Remetente: {{ carta.endRemetente }}</p>
+  <p>CEP Remetente: {{ carta.cepRemetente  | cepFilter }}</p>
+  <p>Nome Destinatário: {{ carta.nomeDestinatario }}</p>
+  <p>Endereço Destinatário: {{ carta.endDestinatario }}</p>
+  <p>CEP Destinatário: {{ carta.cepDestinatario  | cepFilter }}</p>
+  <p>Conteúdo: </p>
+  <textarea>{{ carta.conteudo }}</textarea>
+</div>
